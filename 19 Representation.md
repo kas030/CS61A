@@ -120,7 +120,7 @@ Special method names are used to implement the behavior of built-in functions an
 
 |Names|Behaviors|
 |---|---|
-|`__init`| Method invoked automatically when an object is constructed.|
+|`__init__`| Method invoked automatically when an object is constructed.|
 |`__repr__`| Method invoked to display an object as a Python expression.|
 |`__str__`| Method invoked to display an object as a string.|
 |`__add__`| Method invoked to add one object to another.|
