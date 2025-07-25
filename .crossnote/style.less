@@ -1,0 +1,114 @@
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+.markdown-preview.markdown-preview {
+    // modify your style here
+    // eg: background-color: blue;
+    color: #000000;
+    //font-family: 'Sarasa UI SC', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
+
+    h1 {
+        border-bottom: 1.5px solid #000;
+    }
+
+    h2 {
+        border-bottom: 1.5px solid #aaa;
+    }
+
+    pre[class*=language-] {
+        border-radius: 5px;
+        background: #fafafa;
+        border: 1.5px solid #dadada;
+    }
+
+    pre,
+    code {
+        font-family: 'Maple Mono NF CN', monospace;
+        white-space: pre-wrap;
+        word-break: break-all;
+        overflow: hidden;
+    }
+
+    .cover-title {
+        font-family: "Times New Roman", serif;
+        font-size: 70px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .cover-subtitle {
+        font-family: "Times New Roman", serif;
+        font-size: 35px;
+        margin-top: 50px;
+    }
+
+    &.prince {
+        .cover-page {
+            page: cover;
+        }
+
+        @page cover {
+            @bottom-center {
+                content: none;
+            }
+
+            counter-reset: page 0;
+        }
+
+        .cover-title {
+            font-family: "Times New Roman", serif;
+            font-size: 70px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .cover-subtitle {
+            font-family: "Times New Roman", serif;
+            font-size: 35px;
+            margin-top: 50px;
+        }
+
+        .toc-page {
+            page: toc;
+            counter-reset: page 1;
+        }
+
+        @page toc {
+            @bottom-center {
+                content: counter(page, lower-roman);
+            }
+        }
+
+        .main-content {
+            page: main;
+            counter-reset: page 1;
+        }
+
+        @page main {
+            @bottom {
+                font-family:
+                    'Segoe UI';
+                // 'Times New Roman';
+                font-size: 12pt;
+                content: counter(page) // " / " counter(pages)
+            }
+        }
+
+        pre {
+            page-break-inside: auto;
+        }
+    }
+
+    @media print {
+
+        pre,
+        code {
+            white-space: pre-wrap;
+            word-break: break-all;
+            overflow: hidden;
+        }
+    }
+}
