@@ -39,3 +39,30 @@ an exception is raised that is not handled otherwise,
 and if the class of the exception inherits from `<exception class>`,
 then the `<except suite>` is executed,
 with `<name>` bound to the exception.
+
+## Example: Reduce
+
+Reduce is an important higher-order function which is there to reduce a whole sequence of values to a single value.
+
+There is a built-in version of reduce, but we can also write our own version.
+
+```python
+def reduce(f, s, initial): 
+    for x in s:
+        initial = f(initial, x)
+    return initial
+```
+
+`f` is a two-argument function,
+`s` is a sequence of values that can be the second argument,
+`initial` is a value that can be the first argument.
+
+With the `reduce` function, we can complement a `divide_all` function:
+
+```python
+def divide_all(n, ds):
+    try:
+        return reduce(truediv, ds, n)
+    except ZeroDivisionError:
+        return float('inf')
+```
