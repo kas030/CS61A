@@ -30,3 +30,27 @@ Some built in procedures related to lists:
 - `(list? s)`: test if s is a list
 - `(null? s)`: test if s is an empty list
 - `(list e1 e2 ...)`: build a list with the provided elements
+
+## Symbolic Programming
+
+Symbols normally refer to values, while quotation is used to refer to symbols directly in Lisp.
+
+```scheme
+> (define a 1)
+> (define b 2)
+> (list 'a 'b)
+(a b)
+```
+
+The quote is actually shorthand for a special form called quote: `'a` is short for `(quote a)` and `'b` is short for `(quote b)`.
+
+Quotation can also be applied to combinations to form lists.
+
+```scheme
+> '(a b c)
+(a b c)
+> (car '(a b c))
+a
+```
+
+We can refer to a symbol even before it have been defined.
