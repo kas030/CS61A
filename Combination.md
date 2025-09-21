@@ -156,6 +156,18 @@
     2. [Special Forms](#special-forms)
     3. [Lambda Expressions](#lambda-expressions-1)
     4. [Example: Sierpinski's Triangle](#example-sierpinskis-triangle)
+22. [Scheme Lists](#scheme-lists)
+    1. [Lists](#lists-1)
+    2. [Symbolic Programming](#symbolic-programming)
+    3. [Built-in List Processing Procedures](#built-in-list-processing-procedures)
+    4. [Example: Even Subsets](#example-even-subsets)
+    5. [Discussion Question: Even Subsets Using Filter](#discussion-question-even-subsets-using-filter)
+23. [Calculator](#calculator)
+    1. [Exceptions](#exceptions)
+        1. [Raise Statements](#raise-statements)
+        2. [Try Statements](#try-statements)
+    2. [Example: Reduce](#example-reduce)
+    3. [Parsing](#parsing)
 
 <!-- /code_chunk_output -->
 
@@ -184,5 +196,7 @@
 @import "19 Representation.md"
 @import "20 Efficiency.md"
 @import "21 Scheme.md"
+@import "22 Scheme Lists.md"
+@import "23 Calculator.md"
 
 </div>
