@@ -66,3 +66,13 @@ def divide_all(n, ds):
     except ZeroDivisionError:
         return float('inf')
 ```
+
+## Parsing
+
+To interpret text as a programming language, we first need to parse that text into some structure that makes it easy to perform interpretation.
+
+A parser takes text and returns an expression.
+
+@import "img/calculator-01.png" {width=500}
+
+Syntactic analysis identifies the hierarchical structure of an expression, which may be nested.
