@@ -38,3 +38,54 @@ we'll create one that has "West Coast" as one of the values in each row,
 along with the name of the city.
 
 @import "img/sql-02.png" {width=190}
+
+## Structured Query Language
+
+### Selecting Value Literals
+
+A `SELECT` statement always includes a comma-separated list of column descriptions.
+
+A **column description** is an expression, optionally followed by `AS` and a column name:
+
+```sql
+SELECT [expressions] AS [name], [expression] AS [name], ...;
+```
+
+Selecting literals creates a one-row table.
+
+The union of two select statements is a table containing the rows of both of their results.
+
+```sql
+SELECT "daisy" AS parent, "hank" AS child UNION
+SELECT "ace"            , "bella"         UNION
+SELECT "ace"            , "charlie"       UNION
+SELECT "finn"           , "ace"           UNION
+SELECT "finn"           , "dixie"         UNION
+SELECT "finn"           , "ginger"        UNION
+SELECT "ellie"          , "finn";
+```
+
+### Naming Tables
+
+The result of a `SELECT` statement is displayed to the user, but not stored.
+
+A `CREATE TABLE` statement gives the result of a `SELECT` statement a name:
+
+```sql
+CREATE TABLE [name] AS [select statement];
+```
+
+So we can give the table we created before a name like this:
+
+```sql
+CREATE TABLE parents AS
+    SELECT "daisy" AS parent, "hank" AS child UNION
+    SELECT "ace"            , "bella"         UNION
+    SELECT "ace"            , "charlie"       UNION
+    SELECT "finn"           , "ace"           UNION
+    SELECT "finn"           , "dixie"         UNION
+    SELECT "finn"           , "ginger"        UNION
+    SELECT "ellie"          , "finn";
+```
+
+@import "img/sql-03.png" {width=320}
