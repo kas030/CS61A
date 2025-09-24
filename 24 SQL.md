@@ -107,3 +107,22 @@ SELECT [columns] FROM [table] WHERE [condition] ORDERED BY [order];
 ```sql
 [expressions] AS [name], [expression] AS [name], ...
 ```
+
+## Arithmetic
+
+### Arithmetic in Select Expressions
+
+In a select expression, column names evaluates to row values.
+
+Arithmetic expressions can combine row values and constants.
+
+```sql
+CREATE TABLE lift AS
+    SELECT 101 AS chair, 2 as single, 2 as couple UNION
+    SELECT 102         , 0          , 3           UNION
+    SELECT 103         , 4,         , 1;
+
+SELECT chair, single + 2 * couple AS total FROM lift;
+```
+
+@import "img/sql-04.png" {width=270}
