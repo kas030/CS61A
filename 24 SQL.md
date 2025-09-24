@@ -65,6 +65,8 @@ SELECT "finn"           , "ginger"        UNION
 SELECT "ellie"          , "finn";
 ```
 
+Notice that when we union together a bunch of select statements, we get no guarantees about the order of the result. That's up to the declarative programming engine, which tries to compute the results efficiently.
+
 ### Naming Tables
 
 The result of a `SELECT` statement is displayed to the user, but not stored.
