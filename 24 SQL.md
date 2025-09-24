@@ -89,3 +89,21 @@ CREATE TABLE parents AS
 ```
 
 @import "img/sql-03.png" {width=320}
+
+## Projecting Tables
+
+### Select Statements Project Existing Tables
+
+- A `SELECT` statement can specify an input table using a `FROM` clause.
+- A subset of the rows of the input table can be selected using a `WHERE` clause.
+- An ordering over the remaining rows can be declared using an `ORDERED BY` clause.
+
+```sql
+SELECT [columns] FROM [table] WHERE [condition] ORDERED BY [order];
+```
+
+- Column descriptions determine how each input row is projected to a result row:
+
+```sql
+[expressions] AS [name], [expression] AS [name], ...
+```
