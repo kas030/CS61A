@@ -89,7 +89,7 @@ CREATE TABLE grandparents AS
 Select all grandparents with the same fur as their grandchildren:
 
 ```sql
-SELECT grandog FROM grandparents, dogs AS c, dogs as d
+SELECT grandog FROM grandparents, dogs AS c, dogs AS d
                WHERE grandog = c.name AND
                      granpup = d.name AND
                      c.fur = d.fur;
@@ -116,7 +116,7 @@ Basic string manipulation is built into SQL:
 
 ```sql
 CREATE TABLE phrase AS
-  SELECT "hello," || " world" as s;
+  SELECT "hello," || " world" AS s;
 SELECT substr(s, 4, 2) || substr(s, instr(s, " ") + 1, 1) FROM phrase;
 ```
 
