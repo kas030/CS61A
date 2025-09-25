@@ -31,7 +31,7 @@ SELECT parent FROM parents, dogs
               WHERE child = name AND fur = "curly";
 ```
 
-The clause `SELECT * FROM parents, dogs` will create a table consisting of all the pairs of rows from parents and dogs.
+The statement `SELECT * FROM parents, dogs` will create a table consisting of all the pairs of rows from parents and dogs.
 
 ### Implicit & Explicit Join Syntax
 
