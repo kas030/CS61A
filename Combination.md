@@ -168,6 +168,30 @@
         2. [Try Statements](#try-statements)
     2. [Example: Reduce](#example-reduce)
     3. [Parsing](#parsing)
+24. [SQL](#sql)
+    1. [Databases](#databases)
+        1. [Declarative Programming](#declarative-programming)
+    2. [Structured Query Language](#structured-query-language)
+        1. [Selecting Value Literals](#selecting-value-literals)
+        2. [Naming Tables](#naming-tables)
+    3. [Projecting Tables](#projecting-tables)
+        1. [Select Statements Project Existing Tables](#select-statements-project-existing-tables)
+    4. [Arithmetic](#arithmetic)
+        1. [Arithmetic in Select Expressions](#arithmetic-in-select-expressions)
+25. [Tables](#tables)
+    1. [Joining Tables](#joining-tables)
+        1. [Joining Two Tables](#joining-two-tables)
+        2. [Implicit & Explicit Join Syntax](#implicit--explicit-join-syntax)
+    2. [Aliases and Dot Expressions](#aliases-and-dot-expressions)
+        1. [Joining a Table with Itself](#joining-a-table-with-itself)
+        2. [Joining Multiple Tables](#joining-multiple-tables)
+    3. [Numerical Expressions](#numerical-expressions)
+    4. [String Expressions](#string-expressions)
+26. [Aggregation](#aggregation)
+    1. [Aggregate Functions](#aggregate-functions)
+        1. [Mix Aggregate Functions and Single Values](#mix-aggregate-functions-and-single-values)
+    2. [Groups](#groups)
+        1. [Grouping Rows](#grouping-rows)
 
 <!-- /code_chunk_output -->
 
@@ -198,5 +222,8 @@
 @import "21 Scheme.md"
 @import "22 Scheme Lists.md"
 @import "23 Calculator.md"
+@import "24 SQL.md"
+@import "25 Tables.md"
+@import "26 Aggregation.md"
 
 </div>
