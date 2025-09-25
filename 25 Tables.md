@@ -12,14 +12,14 @@ Continue the dog breeder example before:
 
 ```sql
 CREATE TABLE dogs AS
-    SELECT "ace" AS name, "long" AS fur UNION
-    SELECT "bella"      , "short"       UNION
-    SELECT "charlie"    , "long"        UNION
-    SELECT "daisy"      , "long"        UNION
-    SELECT "ellie"      , "short"       UNION
-    SELECT "finn"       , "curly"       UNION
-    SELECT "ginger"     , "short"       UNION
-    SELECT "hank"       , "curly";
+  SELECT "ace" AS name, "long" AS fur UNION
+  SELECT "bella"      , "short"       UNION
+  SELECT "charlie"    , "long"        UNION
+  SELECT "daisy"      , "long"        UNION
+  SELECT "ellie"      , "short"       UNION
+  SELECT "finn"       , "curly"       UNION
+  SELECT "ginger"     , "short"       UNION
+  SELECT "hank"       , "curly";
 ```
 
 @import "img/tables-01.png" {width=360}
@@ -28,7 +28,7 @@ Select the names of the parents of curly-furred dogs:
 
 ```sql
 SELECT parent FROM parents, dogs
-    WHERE child = name AND fur = "curly";
+              WHERE child = name AND fur = "curly";
 ```
 
 The clause `SELECT * FROM parents, dogs` will create a table consisting of all the pairs of rows from parents and dogs.
@@ -44,7 +44,7 @@ Rewrite the query above using explicit syntax:
 
 ```sql
 SELECT parent FROM parents JOIN dogs ON child = name
-    WHERE fur = "curly";
+              WHERE fur = "curly";
 ```
 
 ## Aliases and Dot Expressions
@@ -69,8 +69,8 @@ Select all pairs of siblings:
 
 ```sql
 SELECT a.child AS first, b.child AS second
-    FROM parents AS a, parents AS b
-    WHERE a.parent = b.parent AND a.child < b.child;
+  FROM parents AS a, parents AS b
+  WHERE a.parent = b.parent AND a.child < b.child;
 ```
 
 @import "img/tables-02.png" {width=320}
@@ -81,16 +81,16 @@ Multiple tables can be joined to yield all combinations of rows from each.
 
 ```sql
 CREATE TABLE grandparents AS
-    SELECT a.parent AS grandog, b.child AS granpup
-        FROM parents AS a, parents AS b
-        WHERE b.parent = a.child
+  SELECT a.parent AS grandog, b.child AS granpup
+    FROM parents AS a, parents AS b
+    WHERE b.parent = a.child
 ```
 
 Select all grandparents with the same fur as their grandchildren:
 
 ```sql
 SELECT grandog FROM grandparents, dogs AS c, dogs as d
-    WHERE grandog = c.name AND
-          granpup = d.name AND
-          c.fur = d.fur;
+               WHERE grandog = c.name AND
+                     granpup = d.name AND
+                     c.fur = d.fur;
 ```

@@ -25,8 +25,8 @@ An example of an SQL query:
 
 ```sql
 SELECT "West Coast" AS region, name FROM cities
-    WHERE longitude >= 115
-    ORDER BY latitude;
+  WHERE longitude >= 115
+  ORDER BY latitude;
 ```
 
 @import "img/sql-01.png" {width=280}
@@ -81,13 +81,13 @@ So we can give the table we created before a name like this:
 
 ```sql
 CREATE TABLE parents AS
-    SELECT "daisy" AS parent, "hank" AS child UNION
-    SELECT "ace"            , "bella"         UNION
-    SELECT "ace"            , "charlie"       UNION
-    SELECT "finn"           , "ace"           UNION
-    SELECT "finn"           , "dixie"         UNION
-    SELECT "finn"           , "ginger"        UNION
-    SELECT "ellie"          , "finn";
+  SELECT "daisy" AS parent, "hank" AS child UNION
+  SELECT "ace"            , "bella"         UNION
+  SELECT "ace"            , "charlie"       UNION
+  SELECT "finn"           , "ace"           UNION
+  SELECT "finn"           , "dixie"         UNION
+  SELECT "finn"           , "ginger"        UNION
+  SELECT "ellie"          , "finn";
 ```
 
 @import "img/sql-03.png" {width=320}
@@ -120,9 +120,9 @@ Arithmetic expressions can combine row values and constants.
 
 ```sql
 CREATE TABLE lift AS
-    SELECT 101 AS chair, 2 as single, 2 as couple UNION
-    SELECT 102         , 0          , 3           UNION
-    SELECT 103         , 4,         , 1;
+  SELECT 101 AS chair, 2 as single, 2 as couple UNION
+  SELECT 102         , 0          , 3           UNION
+  SELECT 103         , 4,         , 1;
 
 SELECT chair, single + 2 * couple AS total FROM lift;
 ```
