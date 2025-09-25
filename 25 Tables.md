@@ -46,3 +46,51 @@ Rewrite the query above using explicit syntax:
 SELECT parent FROM parents JOIN dogs ON child = name
     WHERE fur = "curly";
 ```
+
+## Aliases and Dot Expressions
+
+If two tables have the same column name, then we need a dot expression to distinguish which column we are talking about.
+
+If two tables have the same name, then we need an alias to distinguish them.
+
+These both occur when we join a table with itself.
+
+### Joining a Table with Itself
+
+Two tables may share a column name; dot expressions and aliases disambiguate column values.
+
+```sql
+SELECT [column] FROM [table] WHERE [condition] ORDER BY [order];
+```
+
+`[table]` is a comma-separated list of table names with **optional aliases**.
+
+Select all pairs of siblings:
+
+```sql
+SELECT a.child AS first, b.child AS second
+    FROM parents AS a, parents AS b
+    WHERE a.parent = b.parent AND a.child < b.child;
+```
+
+@import "img/tables-02.png" {width=320}
+
+### Joining Multiple Tables
+
+Multiple tables can be joined to yield all combinations of rows from each.
+
+```sql
+CREATE TABLE grandparents AS
+    SELECT a.parent AS grandog, b.child AS granpup
+        FROM parents AS a, parents AS b
+        WHERE b.parent = a.child
+```
+
+Select all grandparents with the same fur as their grandchildren:
+
+```sql
+SELECT grandog FROM grandparents, dogs AS c, dogs as d
+    WHERE grandog = c.name AND
+          granpup = d.name AND
+          c.fur = d.fur;
+```
