@@ -60,3 +60,36 @@ Some aggregations don't give us meaningful values, like `avg`:
 sqlite> select avg(weight) from animals;
 2009.33333333333|t-rex
 ```
+
+## Groups
+
+By default, all rows that are used to compute the final table,
+meaning the ones that passed the filter in the where clause,
+are all in the same group.
+And so the result of an aggregate function only has one row.
+
+### Grouping Rows
+
+Rows in a table can be grouped, and aggregation is **performed on each group** individually.
+
+```sql
+SELECT [columns] FROM [table] GROUP BY [expression] HAVING [expression];
+```
+
+The number of groups is the number of unique values of the expression placed after the `GROUP BY` clause.
+
+```sql
+SELECT legs, max(weight) FROM animals GROUP BY legs;
+```
+
+@import "img/aggregation-03.png" {width=700}
+
+A `HAVING` clause filters the set of groups that are aggregated:
+
+```sql
+SELECT weight / legs, count(*) FROM animals
+  GROUP BY weight / legs
+  HAVING count(*) > 1;
+```
+
+@import "img/aggregation-04.png" {width=230}
