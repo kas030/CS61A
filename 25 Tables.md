@@ -94,3 +94,38 @@ SELECT grandog FROM grandparents, dogs AS c, dogs as d
                      granpup = d.name AND
                      c.fur = d.fur;
 ```
+
+## Numerical Expressions
+
+Expressions can contain **function calls** and **arithmetic operators**, which can occur in any expression within a select statement.
+
+- Combine values: `+`, `-`, `*`, `/`, `%`, `and`, `or`
+- Transform values: `abs`, `round`, `not`, `-`
+- Compare values: `<`, ,`<=`, `>`, `>=`, `<>`, `!=`, `=`
+
+## String Expressions
+
+String values can be combines to form longer strings through the **concatenation operator**:
+
+```bash
+sqlite> SELECT "hello," || " world";
+hello, world
+```
+
+Basic string manipulation is built into SQL:
+
+```sql
+CREATE TABLE phrase AS
+  SELECT "hello," || " world" as s;
+SELECT substr(s, 4, 2) || substr(s, instr(s, " ") + 1, 1) FROM phrase;
+```
+
+The statements above will get the string `low` as the result.
+
+Strings can be used to represent structured values, but doing so is rarely a good idea:
+
+```sql
+CREATE TABLE lists AS
+  SELECT "one" AS car, "two,three,four" AS cdr;
+SELECT substr(cdr, 1, instr(cdr, ",") - 1) AS cadr FROM lists;
+```
