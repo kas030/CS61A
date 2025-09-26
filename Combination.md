@@ -192,6 +192,14 @@
         1. [Mix Aggregate Functions and Single Values](#mix-aggregate-functions-and-single-values)
     2. [Groups](#groups)
         1. [Grouping Rows](#grouping-rows)
+27. [Databases](#databases-1)
+    1. [Create Table and Drop Table](#create-table-and-drop-table)
+        1. [Create Table](#create-table)
+    2. [Drop Table](#drop-table)
+    3. [Modifying Tables](#modifying-tables)
+        1. [Insert](#insert)
+        2. [Update](#update)
+        3. [Delete](#delete)
 
 <!-- /code_chunk_output -->
 
@@ -225,5 +233,6 @@
 @import "24 SQL.md"
 @import "25 Tables.md"
 @import "26 Aggregation.md"
+@import "27 Databases.md"
 
 </div>
